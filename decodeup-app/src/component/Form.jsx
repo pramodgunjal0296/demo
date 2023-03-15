@@ -52,16 +52,8 @@ function Form() {
         <div>{PageDisplay()}</div>
         <div className="flex items-center justify-center flex-row gap-6 mt-2 ">
           <button
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2  px-4 rounded"
-            disabled={page == 0}
-            onClick={() => {
-              setPage((currPage) => currPage - 1);
-            }}
-          >
-            Prev
-          </button>
-          <button
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+            style={{ marginTop: "30%" }}
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4  rounded"
             onClick={(data) => onNext(data)}
           >
             {page === FormTitles.length - 1 ? "Submit" : "Next"}

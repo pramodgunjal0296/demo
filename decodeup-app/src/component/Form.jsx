@@ -45,14 +45,16 @@ function Form() {
           style={{ width: page === 0 ? "33.3%" : page == 1 ? "66.6%" : "100%" }}
         ></div>
       </div>
-      <div className="form-container h-screen ">
+      <div className=" flex justify-center flex-col">
         <div className="header">
           <h1 className="flex justify-center font-bold">{FormTitles[page]}</h1>
         </div>
         <div>{PageDisplay()}</div>
-        <div className="flex items-center justify-center flex-row gap-6 mt-2 ">
+        <div
+          style={{ marginTop: "10%" }}
+          className="flex items-center justify-center flex-row gap-6 mt-4 "
+        >
           <button
-            style={{ marginTop: "30%" }}
             className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4  rounded"
             onClick={(data) => onNext(data)}
           >

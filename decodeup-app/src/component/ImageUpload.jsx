@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 const ImageUpload = ({ formData, setFormData }) => {
   const [selectedImages, setSelectedImages] = useState([]);
@@ -10,6 +10,7 @@ const ImageUpload = ({ formData, setFormData }) => {
     const imagesArray = selectedFilesArray.map((file) => {
       return URL.createObjectURL(file);
     });
+
     const { name, value } = event.target;
     setFormData({ ...formData, [name]: value });
 
@@ -23,7 +24,7 @@ const ImageUpload = ({ formData, setFormData }) => {
   }
 
   return (
-    <section>
+    <section className="flex justify-center flex-col items-center gap-2">
       <label className="m-auto flex flex-col justify-center border border-black items-center w-40 h-40 cursor-pointer font-lg rounded-3xl">
         + Add Images
         <br />
@@ -41,7 +42,7 @@ const ImageUpload = ({ formData, setFormData }) => {
 
       {selectedImages.length > 0 &&
         (selectedImages.length > 10 ? (
-          <p className="error">
+          <p className="text-red-800">
             You can't upload more than 10 images! <br />
             <span>
               please delete <b> {selectedImages.length - 10} </b> of them{" "}
@@ -59,7 +60,10 @@ const ImageUpload = ({ formData, setFormData }) => {
           </button>
         ))}
 
-      <div className="flex flex-row flex-wrap justify-center items-center">
+      <div
+        style={{ width: "60%" }}
+        className="flex flex-row flex-wrap justify-center items-center w-1/2"
+      >
         {selectedImages &&
           selectedImages.map((image, index) => {
             return (
@@ -83,7 +87,6 @@ const ImageUpload = ({ formData, setFormData }) => {
                 >
                   Remove image {index + 1}
                 </button>
-                {/* / <p>{index + 1}</p> */}
               </div>
             );
           })}
@@ -93,4 +96,3 @@ const ImageUpload = ({ formData, setFormData }) => {
 };
 
 export default ImageUpload;
-// export default ImageUpload;

@@ -76,7 +76,7 @@ const BasicInfo = ({ onNext, formData, setFormData }) => {
   };
 
   return (
-    <div className="container bg-gray-100 gap-2 border border-red-800 p-8">
+    <div className="container bg-gray-100 gap-2 border border-gray-400 p-8">
       <form
         onSubmit={handleSubmit}
         className="flex justify-center flex-col items-start gap-6 w-full"
